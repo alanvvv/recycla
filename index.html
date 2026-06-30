@@ -93,9 +93,10 @@ header.sc nav{padding:12px clamp(18px,5vw,40px)}
 .hero-inner{position:relative;z-index:2;width:100%}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk';font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acid);background:rgba(198,255,58,.1);border:1px solid rgba(198,255,58,.32);padding:8px 16px;border-radius:50px;backdrop-filter:blur(4px)}
 .hero h1{font-size:clamp(2.5rem,9vw,6.4rem);margin:22px 0 0;letter-spacing:-.04em;text-wrap:balance}
-.hero h1 .rot-wrap{display:block;color:var(--acid);height:1.05em;overflow:hidden;position:relative}
+.hero h1 .rot-wrap{display:block;color:var(--acid);height:1.18em;overflow:hidden;position:relative}
+.hero h1 .rot span{display:block;height:1.18em;line-height:1.18em;white-space:nowrap}
 .hero h1 .rot{display:block;animation:rot 9s infinite}
-@keyframes rot{0%,28%{transform:translateY(0)}33%,61%{transform:translateY(-100%)}66%,94%{transform:translateY(-200%)}100%{transform:translateY(-300%)}}
+@keyframes rot{0%,26%{transform:translateY(0)}33%,59%{transform:translateY(-1.18em)}66%,92%{transform:translateY(-2.36em)}100%{transform:translateY(-3.54em)}}
 .hero p.sub{max-width:540px;margin:22px 0 32px;font-size:clamp(1rem,2.4vw,1.2rem);font-weight:300;color:#dbe6df}
 .hero-cta{display:flex;flex-wrap:wrap;gap:13px}
 .hero-foot{margin-top:clamp(28px,5vw,46px);display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center}
@@ -326,7 +327,7 @@ footer{background:var(--ink-2);border-top:1px solid var(--line);padding:clamp(46
     <span class="eyebrow">♻️ Hilo 100% reciclado · Hecho en México</span>
     <h1>
       Playeras que todos
-      <span class="rot-wrap"><span class="rot">siguen usando<br>vuelven a pedir<br>presumen con orgullo<br>siguen usando</span></span>
+      <span class="rot-wrap"><span class="rot"><span>aman</span><span>presumen</span><span>repiten</span><span>aman</span></span></span>
     </h1>
     <p class="sub">Las comunes se guardan y se olvidan. Las nuestras se vuelven parte del día a día por su comodidad y calidad — confeccionadas en nuestro propio taller, a partir de botellas recicladas.</p>
     <div class="hero-cta">
