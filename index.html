@@ -2,370 +2,458 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Re:Cycla · Playeras Sublimadas Premium con Hilo 100% Reciclado | México</title>
-<meta name="description" content="Playeras sublimadas premium hechas en México con hilo 100% reciclado. Cada playera nace de 10 botellas PET, con certificación Global Recycled Standard. Diseño profesional gratis, envío gratis a todo México. Cotiza por WhatsApp.">
-<meta property="og:title" content="Re:Cycla · Playeras Sublimadas Premium con Hilo 100% Reciclado">
+<meta name="description" content="Playeras sublimadas premium hechas en México con hilo 100% reciclado. Cada playera nace de 10 botellas PET, con certificación Global Recycled Standard. Diseño y envío gratis. Cotiza por WhatsApp.">
+<meta property="og:title" content="Re:Cycla · Playeras Sublimadas con Hilo 100% Reciclado">
 <meta property="og:description" content="Calidad y estilo que duran años. Hechas de botellas recicladas, en nuestro propio taller.">
 <meta property="og:image" content="https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=1200">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#0a1f17;
-    --ink-2:#0f2a1f;
-    --verde:#16a34a;
-    --verde-osc:#0d7a37;
-    --lima:#a3e635;
-    --lima-osc:#84cc16;
-    --crema:#f7faf6;
-    --gris:#5b6f64;
-    --linea:#e4ece5;
-    --blanco:#ffffff;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--crema);line-height:1.7;overflow-x:hidden}
-  h1,h2,h3,.display{font-family:'Sora',sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.02em}
-  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-  a{text-decoration:none;color:inherit}
-  img{display:block;max-width:100%}
-  section{padding:100px 0}
+:root{
+  --ink:#06110b;
+  --ink-2:#0b1d13;
+  --surface:#0e241799;
+  --acid:#c6ff3a;
+  --acid-d:#a3e635;
+  --green:#16c47f;
+  --green-d:#0e8f5c;
+  --paper:#f3f7f1;
+  --paper-2:#e7efe6;
+  --muted:#86a394;
+  --line:rgba(255,255,255,.1);
+  --r:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--ink);color:var(--paper);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.dsp{font-family:'Space Grotesk',sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.025em}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding-left:clamp(18px,5vw,40px);padding-right:clamp(18px,5vw,40px)}
+section{position:relative;padding:clamp(70px,11vw,130px) 0}
 
-  /* reveal */
-  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+/* selection */
+::selection{background:var(--acid);color:var(--ink)}
 
-  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--verde);color:#fff;padding:14px 28px;border-radius:50px;font-family:'Sora';font-weight:600;font-size:.95rem;border:none;cursor:pointer;box-shadow:0 12px 28px rgba(22,163,74,.32);transition:transform .2s,box-shadow .2s}
-  .btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(22,163,74,.45)}
-  .btn.lima{background:var(--lima);color:var(--ink);box-shadow:0 12px 28px rgba(163,230,53,.4)}
-  .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff;box-shadow:none;backdrop-filter:blur(4px)}
-  .btn.ghost:hover{background:#fff;color:var(--ink)}
-  .btn.wa{background:#25d366;box-shadow:0 12px 28px rgba(37,211,102,.4)}
+/* scroll progress bar */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--green),var(--acid));z-index:200;transition:width .1s linear}
 
-  /* NAV */
-  header{position:fixed;top:0;width:100%;z-index:100;transition:background .4s,box-shadow .4s,padding .4s}
-  header.scrolled{background:rgba(247,250,246,.92);backdrop-filter:blur(12px);box-shadow:0 6px 30px rgba(10,31,23,.07)}
-  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:1200px;margin:0 auto;transition:padding .4s}
-  header.scrolled nav{padding:13px 24px}
-  .logo{font-family:'Sora';font-weight:800;font-size:1.4rem;color:#fff;display:flex;align-items:center;gap:8px;transition:color .4s;letter-spacing:-.03em}
-  header.scrolled .logo{color:var(--ink)}
-  .logo b{color:var(--lima)}
-  header.scrolled .logo b{color:var(--verde)}
-  .navlinks{display:flex;gap:28px;align-items:center;font-weight:600;font-size:.93rem;color:rgba(255,255,255,.92);transition:color .4s}
-  header.scrolled .navlinks{color:var(--ink)}
-  .navlinks a.lnk{position:relative}
-  .navlinks a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--lima);transition:width .3s}
-  header.scrolled .navlinks a.lnk::after{background:var(--verde)}
-  .navlinks a.lnk:hover::after{width:100%}
-  .menu-toggle{display:none;background:none;border:none;font-size:1.7rem;color:#fff;cursor:pointer}
-  header.scrolled .menu-toggle{color:var(--ink)}
+/* buttons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk';font-weight:600;font-size:.98rem;padding:15px 28px;border-radius:60px;border:none;cursor:pointer;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease;-webkit-tap-highlight-color:transparent}
+.btn.solid{background:var(--acid);color:var(--ink);box-shadow:0 10px 30px rgba(198,255,58,.28)}
+.btn.solid:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(198,255,58,.45)}
+.btn.line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn.line:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn.wa{background:#25d366;color:#fff;box-shadow:0 10px 30px rgba(37,211,102,.32)}
+.btn.wa:hover{transform:translateY(-3px)}
 
-  /* HERO */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
-  .hero-bg{position:absolute;inset:0;background:url('https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=1800') center/cover;transform:scale(1.12);animation:zoom 20s ease-in-out infinite alternate}
-  @keyframes zoom{to{transform:scale(1)}}
-  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,31,23,.9) 0%,rgba(13,42,31,.7) 45%,rgba(10,31,23,.35) 100%);z-index:1}
-  .hero-inner{position:relative;z-index:3;max-width:760px;padding:120px 0 60px}
-  .badge-eco{display:inline-flex;align-items:center;gap:8px;background:rgba(163,230,53,.16);border:1px solid rgba(163,230,53,.5);color:var(--lima);padding:8px 18px;border-radius:50px;font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:24px}
-  .hero h1{font-size:clamp(2.6rem,6.5vw,5rem);text-shadow:0 6px 40px rgba(0,0,0,.35)}
-  .hero h1 em{font-style:normal;color:var(--lima)}
-  .hero .sub{font-size:clamp(1.08rem,2.2vw,1.35rem);font-weight:300;margin:22px 0 34px;max-width:600px;opacity:.95;text-shadow:0 2px 14px rgba(0,0,0,.4)}
-  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-trust{margin-top:40px;display:flex;gap:14px 30px;flex-wrap:wrap;font-size:.92rem;font-weight:300}
-  .hero-trust span{display:inline-flex;align-items:center;gap:8px}
-  .hero-trust b{color:var(--lima);font-weight:700;font-family:'Sora'}
-  .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;color:#fff;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;opacity:.85;animation:bob 2s infinite}
-  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv.lx{transform:translateX(-46px)}.rv.rx{transform:translateX(46px)}
+.rv.in.lx,.rv.in.rx{transform:none}
+[data-d="1"]{transition-delay:.09s}[data-d="2"]{transition-delay:.18s}[data-d="3"]{transition-delay:.27s}[data-d="4"]{transition-delay:.36s}
+.clip{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.16,1,.3,1)}
+.clip.in{clip-path:inset(0 0 0 0)}
 
-  /* MARQUEE */
-  .marquee{background:var(--ink);color:#fff;padding:18px 0;overflow:hidden;white-space:nowrap}
-  .marquee .track{display:inline-block;animation:scroll 26s linear infinite}
-  .marquee span{font-family:'Sora';font-weight:600;font-size:1rem;margin:0 14px;color:#fff}
-  .marquee i{color:var(--lima);font-style:normal;margin:0 14px}
-  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* ===== NAV ===== */
+header{position:fixed;inset:0 0 auto 0;z-index:150;transition:background .4s,backdrop-filter .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+header.sc{background:rgba(6,17,11,.72);backdrop-filter:blur(16px);border-color:var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:18px clamp(18px,5vw,40px);transition:padding .4s}
+header.sc nav{padding:12px clamp(18px,5vw,40px)}
+.brand{font-family:'Space Grotesk';font-weight:700;font-size:1.35rem;letter-spacing:-.03em;display:flex;align-items:center;gap:7px}
+.brand .dot{color:var(--acid)}
+.brand .spin{display:inline-block;animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a.lk{font-size:.93rem;font-weight:500;color:#cdd9d1;position:relative;padding:4px 0}
+.nav-links a.lk::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--acid);transition:width .3s}
+.nav-links a.lk:hover{color:#fff}.nav-links a.lk:hover::after{width:100%}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);color:#fff;font-size:1.3rem;cursor:pointer;align-items:center;justify-content:center}
+/* mobile overlay menu */
+.mmenu{position:fixed;inset:0;z-index:140;background:rgba(6,17,11,.97);backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:40px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.16,1,.3,1);visibility:hidden}
+.mmenu.open{transform:none;visibility:visible}
+.mmenu a{font-family:'Space Grotesk';font-weight:600;font-size:2rem;color:#fff;padding:12px 0;border-bottom:1px solid var(--line)}
+.mmenu a span{color:var(--acid);font-size:1rem;margin-right:12px}
+.mmenu .btn{margin-top:24px;justify-content:center}
+.mclose{position:absolute;top:22px;right:24px;width:46px;height:46px;border-radius:12px;border:1px solid var(--line);background:none;color:#fff;font-size:1.5rem;cursor:pointer}
 
-  /* STATS */
-  .stats{background:var(--ink-2);color:#fff;padding:64px 0}
-  .statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
-  .stat .num{font-family:'Sora';font-weight:800;font-size:clamp(2.1rem,5vw,3.3rem);color:var(--lima);line-height:1}
-  .stat .lbl{font-size:.92rem;font-weight:300;opacity:.88;margin-top:8px}
+/* ===== HERO ===== */
+.hero{min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(40px,7vw,80px)}
+.hero-media{position:absolute;inset:0;z-index:0;will-change:transform}
+.hero-media img{width:100%;height:120%;object-fit:cover;object-position:center 30%}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+   radial-gradient(120% 90% at 80% 10%,rgba(6,17,11,.15),transparent 50%),
+   linear-gradient(180deg,rgba(6,17,11,.5) 0%,rgba(6,17,11,.35) 35%,rgba(6,17,11,.92) 92%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;mix-blend-mode:overlay;opacity:.5;
+   background:radial-gradient(60% 50% at 15% 90%,rgba(198,255,58,.35),transparent 60%),radial-gradient(50% 40% at 90% 70%,rgba(22,196,127,.3),transparent 60%)}
+.hero-inner{position:relative;z-index:2;width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Space Grotesk';font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--acid);background:rgba(198,255,58,.1);border:1px solid rgba(198,255,58,.32);padding:8px 16px;border-radius:50px;backdrop-filter:blur(4px)}
+.hero h1{font-size:clamp(2.5rem,9vw,6.4rem);margin:22px 0 0;letter-spacing:-.04em;text-wrap:balance}
+.hero h1 .rot-wrap{display:block;color:var(--acid);height:1.05em;overflow:hidden;position:relative}
+.hero h1 .rot{display:block;animation:rot 9s infinite}
+@keyframes rot{0%,28%{transform:translateY(0)}33%,61%{transform:translateY(-100%)}66%,94%{transform:translateY(-200%)}100%{transform:translateY(-300%)}}
+.hero p.sub{max-width:540px;margin:22px 0 32px;font-size:clamp(1rem,2.4vw,1.2rem);font-weight:300;color:#dbe6df}
+.hero-cta{display:flex;flex-wrap:wrap;gap:13px}
+.hero-foot{margin-top:clamp(28px,5vw,46px);display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center}
+.hero-foot .pt{display:flex;align-items:center;gap:10px;font-size:.92rem;color:#cdd9d1}
+.hero-foot .pt b{font-family:'Space Grotesk';color:#fff}
+.hero-foot .ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid var(--line)}
+.sdown{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:2;width:26px;height:42px;border:2px solid rgba(255,255,255,.4);border-radius:14px;display:none}
+.sdown::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;background:var(--acid);border-radius:2px;animation:sdot 1.6s infinite}
+@keyframes sdot{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+@media(min-width:900px){.sdown{display:block}}
 
-  /* SECTION HEAD */
-  .sec-head{max-width:680px;margin:0 auto 58px;text-align:center}
-  .sec-head .tag{color:var(--verde);font-family:'Sora';font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
-  .sec-head h2{font-size:clamp(2rem,4.6vw,3rem);margin:12px 0 14px}
-  .sec-head p{color:var(--gris);font-weight:300;font-size:1.08rem}
+/* ===== TICKER ===== */
+.ticker{background:var(--acid);color:var(--ink);overflow:hidden;white-space:nowrap;border-top:1px solid #000;border-bottom:1px solid #000}
+.ticker .tk{display:inline-flex;align-items:center;padding:15px 0;animation:tk 24s linear infinite}
+.ticker.r2 .tk{animation-duration:30s;animation-direction:reverse}
+.ticker b{font-family:'Space Grotesk';font-weight:600;font-size:1rem;margin:0 18px}
+.ticker .st{margin:0 18px;font-size:1.1rem}
+@keyframes tk{to{transform:translateX(-50%)}}
 
-  /* SUSTENTABILIDAD / botellas */
-  .eco{background:linear-gradient(180deg,#fff,var(--crema))}
-  .eco-split{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
-  .eco-copy .tag{color:var(--verde);font-family:'Sora';font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
-  .eco-copy h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:12px 0 16px}
-  .eco-copy h2 em{font-style:normal;color:var(--verde)}
-  .eco-copy p{color:var(--gris);font-weight:300;margin-bottom:18px}
-  .grs{display:inline-flex;align-items:center;gap:10px;background:#eaf6ee;border:1px solid #c9ead3;color:var(--verde-osc);padding:10px 18px;border-radius:14px;font-weight:600;font-size:.9rem}
-  .flow{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--ink);border-radius:24px;padding:40px 24px;color:#fff;box-shadow:0 24px 50px rgba(10,31,23,.25)}
-  .flow .step{text-align:center;flex:1}
-  .flow .step .ic{font-size:2.6rem;line-height:1}
-  .flow .step .n{font-family:'Sora';font-weight:800;font-size:1.5rem;color:var(--lima);margin-top:6px}
-  .flow .step .t{font-size:.78rem;opacity:.85;margin-top:2px}
-  .flow .arrow{color:var(--lima);font-size:1.6rem;opacity:.7}
+/* ===== MANIFESTO ===== */
+.mani{background:var(--paper);color:var(--ink)}
+.mani .big{font-size:clamp(1.7rem,5vw,3.4rem);font-weight:700;line-height:1.12;max-width:1000px;letter-spacing:-.03em}
+.mani .big .word{color:var(--green)}
+.mani .big .dim{color:#aab8af}
+.mani .row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,46px);margin-top:clamp(40px,6vw,70px)}
+.mani .cell h3{font-size:1.15rem;margin-bottom:8px}
+.mani .cell p{color:#5d6f64;font-weight:300;font-size:.96rem}
+.mani .cell .k{font-family:'Space Grotesk';font-size:.8rem;font-weight:600;color:var(--green);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:10px}
 
-  /* CALIDAD */
-  .calidad{background:var(--ink);color:#fff}
-  .calidad .sec-head h2{color:#fff}
-  .calidad .sec-head .tag{color:var(--lima)}
-  .calidad .sec-head p{color:rgba(255,255,255,.7)}
-  .qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-  .qcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;transition:transform .3s,border-color .3s,background .3s}
-  .qcard:hover{transform:translateY(-6px);border-color:rgba(163,230,53,.5);background:rgba(163,230,53,.06)}
-  .qcard .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--verde),var(--lima-osc));display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:16px}
-  .qcard h3{font-size:1.12rem;margin-bottom:8px}
-  .qcard p{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.72)}
+/* ===== STATS ===== */
+.stats{background:var(--ink-2)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,3vw,30px)}
+.stat{padding:clamp(22px,3vw,30px);border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.04),transparent)}
+.stat .num{font-family:'Space Grotesk';font-weight:700;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1;background:linear-gradient(120deg,#fff,var(--acid));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat .lbl{color:var(--muted);font-size:.9rem;margin-top:8px}
 
-  /* PROCESO */
-  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .pcard{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:30px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
-  .pcard:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(10,31,23,.1)}
-  .pcard .num{font-family:'Sora';font-weight:800;font-size:3.4rem;color:var(--linea);line-height:1;position:absolute;top:14px;right:20px}
-  .pcard .step-tag{color:var(--verde);font-family:'Sora';font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
-  .pcard h3{font-size:1.25rem;margin:6px 0 8px}
-  .pcard p{color:var(--gris);font-weight:300;font-size:.94rem}
+/* ===== CYCLE / SUSTENTABILIDAD ===== */
+.cycle .head{max-width:620px;margin-bottom:clamp(34px,5vw,56px)}
+.tag{font-family:'Space Grotesk';font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acid)}
+.cycle h2{font-size:clamp(1.9rem,5vw,3.1rem);margin:12px 0 14px}
+.cycle h2 em{font-style:normal;color:var(--green)}
+.cycle .lead{color:var(--muted);font-weight:300;font-size:1.05rem}
+.cyc-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:clamp(8px,2vw,22px);background:linear-gradient(135deg,rgba(22,196,127,.12),rgba(198,255,58,.06));border:1px solid var(--line);border-radius:28px;padding:clamp(26px,4vw,46px)}
+.cyc-node{text-align:center}
+.cyc-node .ring{width:clamp(78px,14vw,120px);height:clamp(78px,14vw,120px);margin:0 auto 12px;border-radius:50%;display:grid;place-items:center;font-size:clamp(2rem,6vw,3rem);background:rgba(6,17,11,.5);border:1px solid var(--line);position:relative}
+.cyc-node svg.prog{position:absolute;inset:-1px;transform:rotate(-90deg)}
+.cyc-node svg.prog circle{fill:none;stroke:var(--acid);stroke-width:3;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;transition:stroke-dashoffset 1.4s ease}
+.cyc-node.in svg.prog circle{stroke-dashoffset:0}
+.cyc-node .n{font-family:'Space Grotesk';font-weight:700;font-size:1.5rem;color:var(--acid)}
+.cyc-node .t{color:var(--muted);font-size:.84rem;margin-top:2px}
+.cyc-arrow{color:var(--green);font-size:1.5rem;animation:slide 1.8s ease-in-out infinite}
+@keyframes slide{0%,100%{transform:translateX(0);opacity:.6}50%{transform:translateX(5px);opacity:1}}
+.grs{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:rgba(22,196,127,.12);border:1px solid rgba(22,196,127,.35);color:#9be9c4;padding:11px 18px;border-radius:14px;font-weight:500;font-size:.92rem}
 
-  /* GALERIA */
-  .gal{background:var(--crema)}
-  .galgrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
-  .galgrid figure{margin:0;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 12px 30px rgba(10,31,23,.1)}
-  .galgrid figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-  .galgrid figure:hover img{transform:scale(1.1)}
-  .galgrid figure figcaption{position:absolute;left:0;bottom:0;right:0;padding:30px 18px 16px;color:#fff;font-family:'Sora';font-weight:600;font-size:.95rem;background:linear-gradient(transparent,rgba(10,31,23,.85));opacity:0;transition:opacity .4s}
-  .galgrid figure:hover figcaption{opacity:1}
-  .tall{grid-row:span 2}
-  .wide{grid-column:span 2}
+/* ===== BENTO CALIDAD ===== */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(150px,auto);gap:14px}
+.bx{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.bx:hover{border-color:rgba(198,255,58,.4)}
+.bx .ic{font-size:1.8rem}
+.bx h3{font-size:1.18rem;margin:14px 0 6px}
+.bx p{color:var(--muted);font-weight:300;font-size:.93rem}
+.bx.feature{grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;min-height:330px;padding:0}
+.bx.feature .pic{position:absolute;inset:0}
+.bx.feature .pic img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.bx.feature:hover .pic img{transform:scale(1.08)}
+.bx.feature::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(6,17,11,.9))}
+.bx.feature .cap{position:relative;z-index:2;padding:28px}
+.bx.feature .cap .k{font-family:'Space Grotesk';color:var(--acid);font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.bx.feature .cap h3{font-size:1.5rem;margin-top:8px}
+.bx.span2{grid-column:span 2}
+.calidad{background:var(--ink)}
+.calidad .head{text-align:center;max-width:640px;margin:0 auto clamp(34px,5vw,54px)}
+.calidad h2{font-size:clamp(1.9rem,5vw,3.1rem);margin:12px 0}
+.calidad .lead{color:var(--muted);font-weight:300}
 
-  /* USOS */
-  .usos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .uso{text-align:center;padding:36px 24px;border-radius:20px;background:#fff;border:1px solid var(--linea);transition:transform .3s,box-shadow .3s}
-  .uso:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(10,31,23,.1)}
-  .uso .ic{font-size:2.6rem}
-  .uso h3{font-size:1.2rem;margin:12px 0 6px}
-  .uso p{color:var(--gris);font-weight:300;font-size:.94rem}
+/* ===== PROCESO sticky timeline ===== */
+.proc{background:var(--paper);color:var(--ink)}
+.proc-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,6vw,80px);align-items:start}
+.proc-left{position:sticky;top:120px}
+.proc-left .tag{color:var(--green)}
+.proc-left h2{font-size:clamp(1.9rem,5vw,3rem);margin:12px 0 16px}
+.proc-left p{color:#5d6f64;font-weight:300;margin-bottom:26px}
+.timeline{position:relative;padding-left:46px}
+.timeline .rail{position:absolute;left:15px;top:6px;bottom:6px;width:3px;background:#d6e2d4;border-radius:3px;overflow:hidden}
+.timeline .rail i{position:absolute;left:0;top:0;width:100%;height:0;background:linear-gradient(var(--green),var(--acid));transition:height .15s linear}
+.tstep{position:relative;padding:0 0 36px}
+.tstep:last-child{padding-bottom:0}
+.tstep .dot{position:absolute;left:-46px;top:0;width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid #c9d6c7;display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:.85rem;color:#9aa89d;transition:all .35s}
+.tstep.on .dot{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 0 0 6px rgba(22,196,127,.16)}
+.tstep .k{font-family:'Space Grotesk';font-weight:600;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.tstep h3{font-size:1.3rem;margin:4px 0 6px}
+.tstep p{color:#5d6f64;font-weight:300;font-size:.97rem;max-width:440px}
 
-  /* RESPALDO */
-  .respaldo{background:linear-gradient(135deg,var(--verde-osc),var(--verde));color:#fff;border-radius:28px;padding:60px;display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
-  .respaldo h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:16px}
-  .respaldo p{font-weight:300;opacity:.94;margin-bottom:14px}
-  .respaldo .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-  .respaldo .chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:50px;font-size:.82rem;font-weight:500}
-  .respaldo .right{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:30px;text-align:center}
-  .respaldo .right .big{font-family:'Sora';font-weight:800;font-size:3.2rem;line-height:1;color:var(--lima)}
-  .respaldo .right .small{font-size:.92rem;opacity:.9;margin-top:6px}
+/* ===== TRABAJOS ===== */
+.work{background:var(--ink)}
+.work .head{text-align:center;max-width:660px;margin:0 auto clamp(34px,5vw,54px)}
+.work h2{font-size:clamp(1.9rem,5vw,3.1rem);margin:12px 0}
+.work .lead{color:var(--muted);font-weight:300}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:13px}
+.mosaic figure{margin:0;border-radius:18px;overflow:hidden;position:relative}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.mosaic figure:hover img{transform:scale(1.09)}
+.mosaic figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 15px;font-family:'Space Grotesk';font-weight:600;font-size:.95rem;color:#fff;background:linear-gradient(transparent,rgba(6,17,11,.9));transform:translateY(8px);opacity:0;transition:.4s}
+.mosaic figure:hover figcaption{transform:none;opacity:1}
+.m-tall{grid-row:span 2}.m-wide{grid-column:span 2}
 
-  /* CTA */
-  .ctaband{position:relative;text-align:center;color:#fff;padding:120px 0;background:url('https://playerassublimadas.com/cdn/shop/files/maraton-playeras-sublimadas-personalizadas.jpg?width=1600') center/cover fixed}
-  .ctaband::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,23,.85),rgba(13,122,55,.8))}
-  .ctaband .inner{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 24px}
-  .ctaband h2{font-size:clamp(2.1rem,5vw,3.4rem)}
-  .ctaband h2 em{font-style:normal;color:var(--lima)}
-  .ctaband p{font-weight:300;font-size:1.15rem;margin:18px 0 32px;opacity:.95}
+/* ===== USOS ===== */
+.usos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.uso{border:1px solid var(--line);border-radius:var(--r);padding:30px;text-align:center;transition:transform .3s,border-color .3s}
+.uso:hover{transform:translateY(-6px);border-color:rgba(198,255,58,.4)}
+.uso .ic{font-size:2.3rem}.uso h3{margin:12px 0 6px;font-size:1.15rem}.uso p{color:var(--muted);font-weight:300;font-size:.92rem}
 
-  /* CONTACTO */
-  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-  .cinfo .tag{color:var(--verde);font-family:'Sora';font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
-  .cinfo h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0 22px}
-  .cline{display:flex;gap:15px;align-items:flex-start;margin-bottom:18px}
-  .cline .ic{flex:0 0 46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--verde),var(--lima-osc));color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
-  .cline .meta b{display:block;font-family:'Sora';color:var(--ink)}
-  .cline .meta span,.cline .meta a{color:var(--gris);font-weight:300}
-  .cline .meta a:hover{color:var(--verde)}
-  .cbtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-  .cmedia{border-radius:24px;overflow:hidden;box-shadow:0 24px 50px rgba(10,31,23,.2);aspect-ratio:4/5}
-  .cmedia img{width:100%;height:100%;object-fit:cover}
+/* ===== RESPALDO ===== */
+.resp{background:linear-gradient(135deg,var(--green-d),var(--green));color:#fff;border-radius:30px;padding:clamp(34px,5vw,64px);display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(28px,4vw,54px);align-items:center;overflow:hidden;position:relative}
+.resp::before{content:"♻";position:absolute;right:-30px;bottom:-60px;font-size:18rem;opacity:.08;line-height:1}
+.resp h2{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:14px;position:relative}
+.resp p{font-weight:300;opacity:.95;margin-bottom:12px;position:relative}
+.resp .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;position:relative}
+.resp .chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:7px 14px;border-radius:50px;font-size:.82rem}
+.resp .card{background:rgba(6,17,11,.18);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:30px;text-align:center;position:relative}
+.resp .card .big{font-family:'Space Grotesk';font-weight:700;font-size:clamp(2.6rem,7vw,3.6rem);color:var(--acid);line-height:1}
+.resp .card .sm{font-size:.92rem;opacity:.92;margin-top:6px}
 
-  /* FOOTER */
-  footer{background:var(--ink);color:#9fb5a8;padding:60px 24px 28px}
-  .fgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
-  .fgrid .logo{color:#fff;font-size:1.5rem;margin-bottom:14px}
-  .fgrid p{font-weight:300;font-size:.92rem;max-width:340px}
-  .fcol h4{color:#fff;font-family:'Sora';font-size:1rem;margin-bottom:14px}
-  .fcol a{display:block;color:#9fb5a8;font-weight:300;font-size:.92rem;margin-bottom:9px;transition:color .2s}
-  .fcol a:hover{color:var(--lima)}
-  .fbottom{max-width:1200px;margin:0 auto;padding-top:22px;text-align:center;font-size:.82rem;font-weight:300;opacity:.65}
+/* ===== CTA ===== */
+.cta{text-align:center;overflow:hidden}
+.cta-media{position:absolute;inset:0;z-index:0}
+.cta-media img{width:100%;height:130%;object-fit:cover;will-change:transform}
+.cta::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,17,11,.86),rgba(14,143,92,.82))}
+.cta .inner{position:relative;z-index:2;max-width:720px;margin:0 auto}
+.cta h2{font-size:clamp(2rem,6vw,3.6rem)}
+.cta h2 em{font-style:normal;color:var(--acid)}
+.cta p{font-weight:300;font-size:1.1rem;margin:18px auto 30px;opacity:.95;max-width:520px}
 
-  /* FAB */
-  .fab{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 10px 28px rgba(37,211,102,.5);animation:pulse 2.4s infinite}
-  .fab:hover{transform:scale(1.1)}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+/* ===== CONTACTO ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.contact h2{font-size:clamp(1.9rem,5vw,2.9rem);margin:12px 0 24px}
+.cl{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.cl .ic{flex:0 0 46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--acid-d));color:var(--ink);display:grid;place-items:center;font-size:1.25rem}
+.cl .meta b{display:block;font-family:'Space Grotesk'}
+.cl .meta span,.cl .meta a{color:var(--muted);font-weight:300}
+.cl .meta a:hover{color:var(--acid)}
+.cbtns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.cphoto{border-radius:26px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.cphoto img{width:100%;height:100%;object-fit:cover}
 
-  @media(max-width:980px){
-    .eco-split{grid-template-columns:1fr;gap:36px}
-    .qgrid{grid-template-columns:repeat(2,1fr)}
-    .pgrid{grid-template-columns:1fr}
-    .statgrid{grid-template-columns:repeat(2,1fr);gap:34px 20px}
-    .usos{grid-template-columns:1fr}
-    .respaldo{grid-template-columns:1fr;padding:40px}
-    .cgrid{grid-template-columns:1fr}
-    .galgrid{grid-template-columns:repeat(2,1fr)}
-    .fgrid{grid-template-columns:1fr;gap:28px}
-  }
-  @media(max-width:680px){
-    .navlinks{display:none}
-    .menu-toggle{display:block}
-    .navlinks.open{display:flex;flex-direction:column;position:absolute;top:62px;right:16px;background:#fff;color:var(--ink);padding:22px 28px;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.18);gap:16px}
-    .navlinks.open a{color:var(--ink)}
-    .flow{flex-wrap:wrap;gap:18px}.flow .arrow{display:none}
-    .ctaband{background-attachment:scroll}
-  }
+/* ===== FOOTER ===== */
+footer{background:var(--ink-2);border-top:1px solid var(--line);padding:clamp(46px,7vw,66px) 0 30px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+.fgrid .brand{font-size:1.5rem;margin-bottom:14px}
+.fgrid p{color:var(--muted);font-weight:300;font-size:.92rem;max-width:330px}
+.fcol h4{font-family:'Space Grotesk';font-size:1rem;margin-bottom:14px}
+.fcol a{display:block;color:var(--muted);font-weight:300;font-size:.92rem;margin-bottom:9px;transition:color .2s}
+.fcol a:hover{color:var(--acid)}
+.fbot{padding-top:22px;text-align:center;color:var(--muted);font-size:.82rem;font-weight:300}
+
+/* ===== FAB ===== */
+.fab{position:fixed;right:18px;bottom:max(18px,env(safe-area-inset-bottom));z-index:120;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 12px 30px rgba(37,211,102,.5);animation:pulse 2.6s infinite}
+.fab:active{transform:scale(.94)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .bx.feature{grid-column:span 2}
+  .mosaic{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:820px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .mani .row{grid-template-columns:1fr;gap:26px}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .cyc-flow{grid-template-columns:1fr;gap:18px}
+  .cyc-arrow{transform:rotate(90deg)}
+  .proc-grid{grid-template-columns:1fr;gap:30px}
+  .proc-left{position:static}
+  .resp{grid-template-columns:1fr}
+  .usos{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr;gap:26px}
+}
+@media(max-width:520px){
+  .bx.feature{min-height:280px}
+  .mosaic{grid-auto-rows:160px}
+  .hero h1{letter-spacing:-.03em}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001s!important;transition-duration:.001s!important}
+  .rv{opacity:1;transform:none}.clip{clip-path:none}
+}
 </style>
 </head>
 <body>
+<div class="progress" id="prog"></div>
 
 <!-- NAV -->
 <header id="hdr">
   <nav>
-    <a href="#inicio" class="logo">Re<b>:</b>Cycla ♻️</a>
-    <div class="navlinks" id="nav">
-      <a class="lnk" href="#sustentabilidad">Sustentabilidad</a>
-      <a class="lnk" href="#calidad">Calidad</a>
-      <a class="lnk" href="#proceso">Proceso</a>
-      <a class="lnk" href="#trabajos">Trabajos</a>
-      <a class="lnk" href="#contacto">Contacto</a>
-      <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn">Cotizar ahora</a>
+    <a href="#top" class="brand">Re<span class="dot">:</span>Cycla <span class="spin">♻️</span></a>
+    <div class="nav-links">
+      <a class="lk" href="#sustentabilidad">Sustentabilidad</a>
+      <a class="lk" href="#calidad">Calidad</a>
+      <a class="lk" href="#proceso">Proceso</a>
+      <a class="lk" href="#trabajos">Trabajos</a>
+      <a class="lk" href="#contacto">Contacto</a>
+      <a class="btn solid" href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">Cotizar</a>
     </div>
-    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    <button class="burger" id="burger" aria-label="Menú">☰</button>
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <div class="wrap hero-inner">
-    <span class="badge-eco">♻️ Hilo 100% reciclado · Hecho en México</span>
-    <h1>Playeras sublimadas que <em>todos siguen usando</em></h1>
-    <p class="sub">Las playeras comunes se guardan y se olvidan. Las nuestras se vuelven parte del día a día por su comodidad y calidad comprobada. Confeccionadas en nuestro propio taller, a partir de botellas recicladas.</p>
-    <div class="hero-btns">
-      <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn lima">💬 Cotiza por WhatsApp</a>
-      <a href="#trabajos" class="btn ghost">Ver nuestros trabajos</a>
-    </div>
-    <div class="hero-trust">
-      <span>🧵 <b>100%</b> hilo reciclado</span>
-      <span>📦 <b>Envío gratis</b> a todo México</span>
-      <span>🎨 <b>Diseño</b> profesional gratis</span>
-    </div>
-  </div>
-  <a href="#sustentabilidad" class="scroll-cue">Desliza ↓</a>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="track">
-    <span>Envío gratis</span><i>♦</i><span>Diseño profesional gratis</span><i>♦</i><span>Hilo 100% reciclado</span><i>♦</i><span>Sin retrasos</span><i>♦</i><span>Certificación Global Recycled Standard</span><i>♦</i><span>Atención directa, sin intermediarios</span><i>♦</i>
-    <span>Envío gratis</span><i>♦</i><span>Diseño profesional gratis</span><i>♦</i><span>Hilo 100% reciclado</span><i>♦</i><span>Sin retrasos</span><i>♦</i><span>Certificación Global Recycled Standard</span><i>♦</i><span>Atención directa, sin intermediarios</span><i>♦</i>
-  </div>
+<!-- MOBILE MENU -->
+<div class="mmenu" id="mmenu">
+  <button class="mclose" id="mclose" aria-label="Cerrar">✕</button>
+  <a href="#sustentabilidad"><span>01</span>Sustentabilidad</a>
+  <a href="#calidad"><span>02</span>Calidad</a>
+  <a href="#proceso"><span>03</span>Proceso</a>
+  <a href="#trabajos"><span>04</span>Trabajos</a>
+  <a href="#contacto"><span>05</span>Contacto</a>
+  <a class="btn solid" href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
 </div>
 
-<!-- STATS -->
-<section class="stats" style="padding-top:60px;padding-bottom:60px">
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-media" id="heroMedia">
+    <img src="https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=1800" alt="Evento masivo con playeras sublimadas Re:Cycla">
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">♻️ Hilo 100% reciclado · Hecho en México</span>
+    <h1>
+      Playeras que todos
+      <span class="rot-wrap"><span class="rot">siguen usando<br>vuelven a pedir<br>presumen con orgullo<br>siguen usando</span></span>
+    </h1>
+    <p class="sub">Las comunes se guardan y se olvidan. Las nuestras se vuelven parte del día a día por su comodidad y calidad — confeccionadas en nuestro propio taller, a partir de botellas recicladas.</p>
+    <div class="hero-cta">
+      <a class="btn solid" href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">💬 Cotiza por WhatsApp</a>
+      <a class="btn line" href="#trabajos">Ver trabajos</a>
+    </div>
+    <div class="hero-foot">
+      <div class="pt"><span class="ic">🧵</span><span><b>100%</b> hilo reciclado</span></div>
+      <div class="pt"><span class="ic">📦</span><span><b>Envío</b> gratis a México</span></div>
+      <div class="pt"><span class="ic">🎨</span><span><b>Diseño</b> profesional gratis</span></div>
+    </div>
+  </div>
+  <span class="sdown"></span>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="tk" id="tk1"></div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="mani">
   <div class="wrap">
-    <div class="statgrid">
-      <div class="stat reveal"><div class="num" data-target="20" data-suffix=" mil">0</div><div class="lbl">Playeras entregadas al mes</div></div>
-      <div class="stat reveal d1"><div class="num" data-target="200" data-suffix=" mil">0</div><div class="lbl">Botellas PET recicladas al mes</div></div>
-      <div class="stat reveal d2"><div class="num" data-target="800" data-suffix="+">0</div><div class="lbl">Clientes satisfechos</div></div>
-      <div class="stat reveal d3"><div class="num" data-target="100" data-suffix="%">0</div><div class="lbl">Entrega garantizada</div></div>
+    <p class="big rv">Creemos que <span class="word">la moda debe ser sustentable</span>. Por eso transformamos botellas en prendas premium que la gente <span class="word">ama usar</span> — <span class="dim">demostrando que calidad y planeta no están peleados.</span></p>
+    <div class="row">
+      <div class="cell rv" data-d="1"><span class="k">Taller propio</span><h3>Sin intermediarios</h3><p>Confeccionamos cada playera nosotros mismos: consistencia, tiempos confiables y atención directa.</p></div>
+      <div class="cell rv" data-d="2"><span class="k">Calidad real</span><h3>Que se nota y dura</h3><p>El mismo nivel en todas las piezas, sin importar la cantidad del pedido.</p></div>
+      <div class="cell rv" data-d="3"><span class="k">Impacto</span><h3>Cada playera suma</h3><p>Reciclamos 200 mil botellas PET al mes y las convertimos en algo que se usa todos los días.</p></div>
     </div>
   </div>
 </section>
 
-<!-- SUSTENTABILIDAD -->
-<section class="eco" id="sustentabilidad">
-  <div class="wrap eco-split">
-    <div class="eco-copy reveal">
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat rv"><div class="num" data-to="20" data-suf=" mil">0</div><div class="lbl">Playeras entregadas al mes</div></div>
+      <div class="stat rv" data-d="1"><div class="num" data-to="200" data-suf=" mil">0</div><div class="lbl">Botellas PET recicladas al mes</div></div>
+      <div class="stat rv" data-d="2"><div class="num" data-to="800" data-suf="+">0</div><div class="lbl">Clientes satisfechos</div></div>
+      <div class="stat rv" data-d="3"><div class="num" data-to="100" data-suf="%">0</div><div class="lbl">Entrega garantizada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CYCLE -->
+<section class="cycle" id="sustentabilidad">
+  <div class="wrap">
+    <div class="head rv">
       <span class="tag">¿Por qué Re:Cycla?</span>
       <h2>Cada playera nace de <em>10 botellas recicladas</em></h2>
-      <p>Las botellas de PET se transforman en hilo y, de ahí, en una prenda durable, cómoda y sustentable. Calidad premium que además genera un impacto positivo en el medio ambiente — sin sacrificar estilo ni rendimiento.</p>
-      <p>Reciclamos <strong>200 mil botellas al mes</strong>, demostrando que es posible crear productos de alta calidad a partir de materiales reciclados.</p>
-      <div class="grs">✅ Certificación Global Recycled Standard (GRS)</div>
+      <p class="lead">El PET se transforma en hilo y, de ahí, en una prenda durable, cómoda y sustentable. Calidad premium con impacto positivo — sin sacrificar estilo ni rendimiento.</p>
     </div>
-    <div class="flow reveal d2">
-      <div class="step"><div class="ic">🍾</div><div class="n">10</div><div class="t">Botellas PET</div></div>
-      <div class="arrow">→</div>
-      <div class="step"><div class="ic">🧵</div><div class="n">1</div><div class="t">Hilo reciclado</div></div>
-      <div class="arrow">→</div>
-      <div class="step"><div class="ic">👕</div><div class="n">1</div><div class="t">Playera premium</div></div>
+    <div class="cyc-flow rv" data-d="1">
+      <div class="cyc-node" data-cyc><div class="ring">🍾<svg class="prog" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47"/></svg></div><div class="n">10</div><div class="t">Botellas PET</div></div>
+      <div class="cyc-arrow">→</div>
+      <div class="cyc-node" data-cyc><div class="ring">🧵<svg class="prog" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47"/></svg></div><div class="n">1</div><div class="t">Hilo reciclado</div></div>
+      <div class="cyc-arrow">→</div>
+      <div class="cyc-node" data-cyc><div class="ring">👕<svg class="prog" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47"/></svg></div><div class="n">1</div><div class="t">Playera premium</div></div>
     </div>
+    <div class="grs rv" data-d="2">✅ Certificación Global Recycled Standard (GRS)</div>
   </div>
 </section>
 
-<!-- CALIDAD -->
+<!-- CALIDAD BENTO -->
 <section class="calidad" id="calidad">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="head rv">
       <span class="tag">Calidad que nos distingue</span>
       <h2>Rendimiento profesional, hecho para durar</h2>
-      <p>Cada playera RECYCLA se diseña para brindar comodidad y durabilidad en cada uso.</p>
+      <p class="lead">Cada playera RECYCLA se diseña para comodidad y durabilidad en cada uso.</p>
     </div>
-    <div class="qgrid">
-      <div class="qcard reveal"><div class="ic">💧</div><h3>Tela Dry Fit premium</h3><p>Fresca y transpirable, ideal para eventos, deporte y uso diario.</p></div>
-      <div class="qcard reveal d1"><div class="ic">☀️</div><h3>Protección UV</h3><p>Secado rápido y tratamiento antibacterial para mayor confort.</p></div>
-      <div class="qcard reveal d2"><div class="ic">🧷</div><h3>Costuras reforzadas</h3><p>Precisión y acabados consistentes pieza por pieza.</p></div>
-      <div class="qcard reveal d3"><div class="ic">🎨</div><h3>Sublimación Ultra HD</h3><p>Colores vivos y duraderos que no se despintan con el uso.</p></div>
+    <div class="bento">
+      <div class="bx feature rv">
+        <div class="pic"><img src="https://playerassublimadas.com/cdn/shop/files/proyecto-padel-playeras-sublimadas.png?width=900" alt="Uniformes deportivos sublimados Dry Fit"></div>
+        <div class="cap"><span class="k">Tela Dry Fit premium</span><h3>Fresca, transpirable y lista para rendir</h3></div>
+      </div>
+      <div class="bx rv" data-d="1"><div class="ic">☀️</div><h3>Protección UV</h3><p>Secado rápido y tratamiento antibacterial para mayor confort.</p></div>
+      <div class="bx rv" data-d="2"><div class="ic">🎨</div><h3>Sublimación Ultra HD</h3><p>Colores vivos y duraderos que no se despintan con el uso.</p></div>
+      <div class="bx span2 rv" data-d="1"><div class="ic">🧷</div><h3>Costuras reforzadas de precisión</h3><p>Acabados consistentes pieza por pieza, para que cada playera se vea y se sienta profesional.</p></div>
+      <div class="bx rv" data-d="2"><div class="ic">🇲🇽</div><h3>Hecho en México</h3><p>Producción nacional con materia prima de excelencia.</p></div>
+      <div class="bx rv" data-d="3"><div class="ic">♻️</div><h3>100% reciclado</h3><p>Hilo certificado a partir de botellas PET.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PROCESO -->
-<section id="proceso">
-  <div class="wrap">
-    <div class="sec-head reveal">
+<section class="proc" id="proceso">
+  <div class="wrap proc-grid">
+    <div class="proc-left">
       <span class="tag">Tu pedido paso a paso</span>
-      <h2>Un proceso claro, de la idea a tu puerta</h2>
+      <h2>De la idea a tu puerta, sin sorpresas</h2>
       <p>Te acompañamos en cada etapa con transparencia y tiempos confiables.</p>
+      <a class="btn solid" href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">Empezar mi pedido</a>
     </div>
-    <div class="pgrid">
-      <div class="pcard reveal"><div class="num">1</div><div class="step-tag">Cotización</div><h3>Tu pedido comienza aquí</h3><p>Cotización formal con precios claros, cantidades definidas y detalles completos del proyecto.</p></div>
-      <div class="pcard reveal d1"><div class="num">2</div><div class="step-tag">Diseño</div><h3>Creamos tu idea</h3><p>Transformamos tu concepto en un diseño profesional optimizado para sublimación HD. Gratis.</p></div>
-      <div class="pcard reveal d2"><div class="num">3</div><div class="step-tag">Aprobación</div><h3>Tú tienes la última palabra</h3><p>Te mostramos la propuesta final para que revises y apruebes antes de producir.</p></div>
-      <div class="pcard reveal"><div class="num">4</div><div class="step-tag">Maquila</div><h3>Producción en taller propio</h3><p>Fabricamos cada playera garantizando consistencia y el mismo nivel de calidad.</p></div>
-      <div class="pcard reveal d1"><div class="num">5</div><div class="step-tag">Envío</div><h3>Envío gratis</h3><p>Recibe tus playeras en cualquier parte de México sin costo adicional.</p></div>
-      <div class="pcard reveal d2"><div class="num">6</div><div class="step-tag">Entrega</div><h3>En el tiempo acordado</h3><p>Cumplimos los tiempos de producción y entrega, sin retrasos.</p></div>
+    <div class="timeline" id="timeline">
+      <div class="rail"><i id="rail-fill"></i></div>
+      <div class="tstep"><div class="dot">1</div><span class="k">Cotización</span><h3>Tu pedido comienza aquí</h3><p>Cotización formal con precios claros, cantidades definidas y detalles completos.</p></div>
+      <div class="tstep"><div class="dot">2</div><span class="k">Diseño</span><h3>Creamos tu idea — gratis</h3><p>Transformamos tu concepto en un diseño profesional optimizado para sublimación HD.</p></div>
+      <div class="tstep"><div class="dot">3</div><span class="k">Aprobación</span><h3>Tú tienes la última palabra</h3><p>Te mostramos la propuesta final para que revises y apruebes antes de producir.</p></div>
+      <div class="tstep"><div class="dot">4</div><span class="k">Maquila</span><h3>Producción en taller propio</h3><p>Fabricamos cada playera garantizando el mismo nivel de calidad.</p></div>
+      <div class="tstep"><div class="dot">5</div><span class="k">Envío</span><h3>Envío gratis</h3><p>Recibe tus playeras en cualquier parte de México sin costo adicional.</p></div>
+      <div class="tstep"><div class="dot">6</div><span class="k">Entrega</span><h3>En el tiempo acordado</h3><p>Cumplimos los tiempos de producción y entrega, sin retrasos.</p></div>
     </div>
   </div>
 </section>
 
-<!-- GALERIA -->
-<section class="gal" id="trabajos">
+<!-- TRABAJOS -->
+<section class="work" id="trabajos">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="head rv">
       <span class="tag">Trabajos que hablan por sí solos</span>
       <h2>Proyectos reales de nuestros clientes</h2>
-      <p>Eventos deportivos, torneos, uniformes corporativos y escolares en todo México.</p>
+      <p class="lead">Eventos deportivos, torneos, uniformes corporativos y escolares en todo México.</p>
     </div>
-    <div class="galgrid reveal d1">
-      <figure class="tall"><img src="https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=900" alt="Evento masivo con playeras sublimadas Re:Cycla" loading="lazy"><figcaption>Eventos masivos</figcaption></figure>
-      <figure class="wide"><img src="https://playerassublimadas.com/cdn/shop/files/maraton-playeras-sublimadas-personalizadas.jpg?width=1200" alt="Maratón con playeras personalizadas" loading="lazy"><figcaption>Maratones y carreras</figcaption></figure>
-      <figure><img src="https://playerassublimadas.com/cdn/shop/files/proyecto-padel-playeras-sublimadas.png?width=700" alt="Uniformes de pádel sublimados" loading="lazy"><figcaption>Pádel</figcaption></figure>
-      <figure><img src="https://playerassublimadas.com/cdn/shop/files/equipo-padel-playeras-sublimadas.png?width=700" alt="Equipo de pádel con uniformes Dry Fit" loading="lazy"><figcaption>Equipos deportivos</figcaption></figure>
-      <figure><img src="https://playerassublimadas.com/cdn/shop/files/uniformes-padel-playeras-sublimadas-dryfit.png?width=700" alt="Uniformes de torneo Dry Fit" loading="lazy"><figcaption>Torneos</figcaption></figure>
-      <figure class="wide"><img src="https://playerassublimadas.com/cdn/shop/files/proyecto-uniformes-corporativos-playeras-sublimadas.png?width=1200" alt="Uniformes corporativos y escolares sublimados" loading="lazy"><figcaption>Corporativos y escolares</figcaption></figure>
-      <figure><img src="https://playerassublimadas.com/cdn/shop/files/oficinas-recycla-produccion-playeras-sublimadas.jpg?width=700" alt="Taller de producción Re:Cycla" loading="lazy"><figcaption>Nuestro taller</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- USOS -->
-<section style="background:var(--crema);padding-top:20px">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="tag">Para cada proyecto</span>
-      <h2>Un socio confiable para tu marca o evento</h2>
+    <div class="mosaic">
+      <figure class="m-tall clip"><img src="https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=900" alt="Evento masivo" loading="lazy"><figcaption>Eventos masivos</figcaption></figure>
+      <figure class="m-wide clip"><img src="https://playerassublimadas.com/cdn/shop/files/maraton-playeras-sublimadas-personalizadas.jpg?width=1200" alt="Maratón" loading="lazy"><figcaption>Maratones y carreras</figcaption></figure>
+      <figure class="clip"><img src="https://playerassublimadas.com/cdn/shop/files/proyecto-padel-playeras-sublimadas.png?width=700" alt="Pádel" loading="lazy"><figcaption>Pádel</figcaption></figure>
+      <figure class="clip"><img src="https://playerassublimadas.com/cdn/shop/files/equipo-padel-playeras-sublimadas.png?width=700" alt="Equipos deportivos" loading="lazy"><figcaption>Equipos</figcaption></figure>
+      <figure class="clip"><img src="https://playerassublimadas.com/cdn/shop/files/uniformes-padel-playeras-sublimadas-dryfit.png?width=700" alt="Torneos" loading="lazy"><figcaption>Torneos</figcaption></figure>
+      <figure class="m-wide clip"><img src="https://playerassublimadas.com/cdn/shop/files/proyecto-uniformes-corporativos-playeras-sublimadas.png?width=1200" alt="Uniformes corporativos y escolares" loading="lazy"><figcaption>Corporativos y escolares</figcaption></figure>
+      <figure class="clip"><img src="https://playerassublimadas.com/cdn/shop/files/oficinas-recycla-produccion-playeras-sublimadas.jpg?width=700" alt="Taller Re:Cycla" loading="lazy"><figcaption>Nuestro taller</figcaption></figure>
     </div>
     <div class="usos">
-      <div class="uso reveal"><div class="ic">🏃</div><h3>Eventos deportivos</h3><p>Maratones, torneos, ligas y carreras con identidad propia.</p></div>
-      <div class="uso reveal d1"><div class="ic">🏢</div><h3>Empresas y marcas</h3><p>Uniformes corporativos y merch que tu equipo querrá usar.</p></div>
-      <div class="uso reveal d2"><div class="ic">🎓</div><h3>Escuelas y grupos</h3><p>Playeras escolares, generaciones y eventos especiales.</p></div>
+      <div class="uso rv"><div class="ic">🏃</div><h3>Eventos deportivos</h3><p>Maratones, torneos, ligas y carreras con identidad propia.</p></div>
+      <div class="uso rv" data-d="1"><div class="ic">🏢</div><h3>Empresas y marcas</h3><p>Uniformes y merch que tu equipo querrá usar.</p></div>
+      <div class="uso rv" data-d="2"><div class="ic">🎓</div><h3>Escuelas y grupos</h3><p>Playeras escolares, generaciones y eventos especiales.</p></div>
     </div>
   </div>
 </section>
@@ -373,89 +461,135 @@
 <!-- RESPALDO -->
 <section>
   <div class="wrap">
-    <div class="respaldo reveal">
+    <div class="resp rv">
       <div>
         <h2>Respaldados por la industria textil más grande de México</h2>
-        <p>Formamos parte de <strong>Hilados de Alta Calidad</strong>, la importadora de hilo más grande de México, con más de 40 años de experiencia y seis centros de distribución estratégicos en todo el país.</p>
-        <p>Gracias a este respaldo, garantizamos materia prima de excelencia, entregas puntuales y la más alta calidad en cada pedido.</p>
-        <div class="chips">
-          <span class="chip">Puebla</span><span class="chip">CDMX</span><span class="chip">Monterrey</span><span class="chip">León</span><span class="chip">Cuernavaca</span><span class="chip">Guadalajara</span>
-        </div>
+        <p>Formamos parte de <strong>Hilados de Alta Calidad</strong>, la importadora de hilo más grande de México, con más de 40 años de experiencia y seis centros de distribución en todo el país.</p>
+        <p>Esto nos garantiza materia prima de excelencia, entregas puntuales y la más alta calidad en cada pedido.</p>
+        <div class="chips"><span class="chip">Puebla</span><span class="chip">CDMX</span><span class="chip">Monterrey</span><span class="chip">León</span><span class="chip">Cuernavaca</span><span class="chip">Guadalajara</span></div>
       </div>
-      <div class="right">
-        <div class="big">+40</div>
-        <div class="small">años de experiencia en la industria textil</div>
-        <div style="margin-top:18px;font-size:.86rem;opacity:.92">🏆 Reconocida entre las <b>Mejores Empresas Mexicanas</b></div>
-      </div>
+      <div class="card"><div class="big">+40</div><div class="sm">años en la industria textil</div><div class="sm" style="margin-top:14px">🏆 Entre las <b>Mejores Empresas Mexicanas</b></div></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="ctaband">
-  <div class="inner reveal">
+<section class="cta">
+  <div class="cta-media" id="ctaMedia"><img src="https://playerassublimadas.com/cdn/shop/files/maraton-playeras-sublimadas-personalizadas.jpg?width=1600" alt=""></div>
+  <div class="wrap inner rv">
     <h2>Sé parte del <em>cambio</em></h2>
     <p>Calidad premium, diseño profesional gratis y un impacto positivo en cada playera. Cuéntanos tu proyecto y recibe tu cotización hoy.</p>
-    <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn lima">💬 Cotiza ahora por WhatsApp</a>
+    <a class="btn solid" href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">💬 Cotiza ahora por WhatsApp</a>
   </div>
 </section>
 
 <!-- CONTACTO -->
-<section id="contacto">
-  <div class="wrap cgrid">
-    <div class="cinfo reveal">
+<section class="contact" id="contacto">
+  <div class="wrap contact-grid">
+    <div class="rv lx">
       <span class="tag">Contacto</span>
       <h2>Hablemos de tu proyecto 🌱</h2>
-      <div class="cline"><div class="ic">💬</div><div class="meta"><b>WhatsApp</b><a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">+52 229 422 9515</a></div></div>
-      <div class="cline"><div class="ic">🕒</div><div class="meta"><b>Horario de atención</b><span>Lunes a viernes, 10:00 – 18:00 hrs</span></div></div>
-      <div class="cline"><div class="ic">📸</div><div class="meta"><b>Instagram</b><a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener">@recycla_mexico</a></div></div>
-      <div class="cline"><div class="ic">🌎</div><div class="meta"><b>Cobertura</b><span>Envíos a todo México, sin costo adicional</span></div></div>
+      <div class="cl"><div class="ic">💬</div><div class="meta"><b>WhatsApp</b><a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">+52 229 422 9515</a></div></div>
+      <div class="cl"><div class="ic">🕒</div><div class="meta"><b>Horario</b><span>Lunes a viernes, 10:00 – 18:00 hrs</span></div></div>
+      <div class="cl"><div class="ic">📸</div><div class="meta"><b>Instagram</b><a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener">@recycla_mexico</a></div></div>
+      <div class="cl"><div class="ic">🌎</div><div class="meta"><b>Cobertura</b><span>Envíos a todo México, sin costo adicional</span></div></div>
       <div class="cbtns">
-        <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn wa">💬 WhatsApp</a>
-        <a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener" class="btn lima">📸 Instagram</a>
+        <a class="btn wa" href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a class="btn line" href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener" style="border-color:rgba(255,255,255,.35)">📸 Instagram</a>
       </div>
     </div>
-    <div class="cmedia reveal d1">
-      <img src="https://playerassublimadas.com/cdn/shop/files/proyecto-padel-playeras-sublimadas.png?width=900" alt="Playeras sublimadas Re:Cycla" loading="lazy">
-    </div>
+    <div class="cphoto rv rx clip"><img src="https://playerassublimadas.com/cdn/shop/files/equipo-padel-playeras-sublimadas.png?width=900" alt="Playeras sublimadas Re:Cycla"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="fgrid">
-    <div>
-      <div class="logo">Re<b style="color:var(--lima)">:</b>Cycla ♻️</div>
-      <p>Playeras sublimadas premium hechas en México con hilo 100% reciclado. Calidad y estilo que duran años, con impacto positivo en el medio ambiente.</p>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="brand">Re<span class="dot">:</span>Cycla ♻️</div>
+        <p>Playeras sublimadas premium hechas en México con hilo 100% reciclado. Calidad y estilo que duran años, con impacto positivo en el medio ambiente.</p>
+      </div>
+      <div class="fcol"><h4>Explora</h4>
+        <a href="#sustentabilidad">Sustentabilidad</a><a href="#calidad">Calidad</a><a href="#proceso">Proceso</a><a href="#trabajos">Trabajos</a>
+      </div>
+      <div class="fcol"><h4>Contacto</h4>
+        <a href="https://wa.me/522294229515" target="_blank" rel="noopener">WhatsApp: 229 422 9515</a>
+        <a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://playerassublimadas.com/" target="_blank" rel="noopener">playerassublimadas.com</a>
+      </div>
     </div>
-    <div class="fcol">
-      <h4>Explora</h4>
-      <a href="#sustentabilidad">Sustentabilidad</a>
-      <a href="#calidad">Calidad</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#trabajos">Trabajos</a>
-    </div>
-    <div class="fcol">
-      <h4>Contacto</h4>
-      <a href="https://wa.me/522294229515" target="_blank" rel="noopener">WhatsApp: 229 422 9515</a>
-      <a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://playerassublimadas.com/" target="_blank" rel="noopener">playerassublimadas.com</a>
-    </div>
+    <div class="fbot">© 2025 XM INNOVACIÓN SA de CV · Re:Cycla · Playeras sublimadas con hilo 100% reciclado · Hecho en México 🇲🇽</div>
   </div>
-  <div class="fbottom">© 2025 XM INNOVACIÓN SA de CV · Re:Cycla · Playeras sublimadas con hilo 100% reciclado · Hecho en México 🇲🇽</div>
 </footer>
 
-<a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">💬</a>
+<a class="fab" href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
 <script>
-  const hdr=document.getElementById('hdr');
-  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  function count(el){const t=+el.dataset.target,sfx=el.dataset.suffix||'';let c=0;const s=Math.max(1,t/55);const id=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(id)}el.textContent=Math.round(c)+sfx;},26);}
-  const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){count(e.target);co.unobserve(e.target)}}),{threshold:.5});
-  document.querySelectorAll('.statgrid .num').forEach(el=>co.observe(el));
-  document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ticker fill */
+(function(){
+  const items=['Envío gratis','Diseño profesional gratis','Hilo 100% reciclado','Sin retrasos','Certificación GRS','Atención directa'];
+  let h=''; for(let r=0;r<2;r++){items.forEach(t=>h+='<b>'+t+'</b><span class="st">✦</span>')}
+  document.getElementById('tk1').innerHTML=h;
+})();
+
+/* sticky nav + scroll progress */
+const hdr=document.getElementById('hdr'), prog=document.getElementById('prog');
+function onScroll(){
+  const y=scrollY;
+  hdr.classList.toggle('sc',y>30);
+  const h=document.documentElement.scrollHeight-innerHeight;
+  prog.style.width=(h>0?(y/h*100):0)+'%';
+  // parallax
+  if(!reduce){
+    const hm=document.getElementById('heroMedia');
+    if(hm){const r=hm.parentElement.getBoundingClientRect();hm.style.transform='translateY('+(-r.top*0.25)+'px)';}
+    const cm=document.getElementById('ctaMedia');
+    if(cm){const p=cm.parentElement.getBoundingClientRect();if(p.top<innerHeight&&p.bottom>0){cm.style.transform='translateY('+((innerHeight-p.top)*0.06-30)+'px)';}}
+  }
+  // timeline fill
+  const tl=document.getElementById('timeline');
+  if(tl){
+    const steps=[...tl.querySelectorAll('.tstep')];
+    const fill=document.getElementById('rail-fill');
+    const mid=innerHeight*0.55; let active=-1;
+    steps.forEach((s,i)=>{const r=s.querySelector('.dot').getBoundingClientRect();if(r.top<mid)active=i;s.classList.toggle('on',r.top<mid);});
+    const railTop=tl.querySelector('.rail').getBoundingClientRect().top;
+    const railH=tl.querySelector('.rail').offsetHeight;
+    let f=(mid-railTop)/railH*100; f=Math.max(0,Math.min(100,f));
+    if(fill)fill.style.height=f+'%';
+  }
+}
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* reveals */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.16});
+document.querySelectorAll('.rv,.clip,[data-cyc]').forEach(el=>io.observe(el));
+
+/* counters easeOutExpo */
+function ease(t){return t===1?1:1-Math.pow(2,-10*t)}
+function run(el){const to=+el.dataset.to,suf=el.dataset.suf||'';const dur=1500;let s=null;
+  function step(ts){if(!s)s=ts;const p=Math.min((ts-s)/dur,1);el.textContent=Math.round(to*ease(p))+suf;if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);}
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){run(e.target);co.unobserve(e.target)}}),{threshold:.6});
+document.querySelectorAll('.num').forEach(el=>co.observe(el));
+
+/* tilt on bento + cards (desktop only) */
+if(matchMedia('(pointer:fine)').matches && !reduce){
+  document.querySelectorAll('.bx,.uso,.stat').forEach(c=>{
+    c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5;const y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(800px) rotateX('+(-y*5)+'deg) rotateY('+(x*5)+'deg) translateY(-4px)';});
+    c.addEventListener('pointerleave',()=>c.style.transform='');
+  });
+}
+
+/* mobile menu */
+const mm=document.getElementById('mmenu');
+document.getElementById('burger').onclick=()=>{mm.classList.add('open');document.body.style.overflow='hidden';};
+function closeM(){mm.classList.remove('open');document.body.style.overflow='';}
+document.getElementById('mclose').onclick=closeM;
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeM));
 </script>
 </body>
 </html>
