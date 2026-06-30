@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Re:Cycla · Playeras Sublimadas Premium con Hilo 100% Reciclado | México</title>
+<meta name="description" content="Playeras sublimadas premium hechas en México con hilo 100% reciclado. Cada playera nace de 10 botellas PET, con certificación Global Recycled Standard. Diseño profesional gratis, envío gratis a todo México. Cotiza por WhatsApp.">
+<meta property="og:title" content="Re:Cycla · Playeras Sublimadas Premium con Hilo 100% Reciclado">
+<meta property="og:description" content="Calidad y estilo que duran años. Hechas de botellas recicladas, en nuestro propio taller.">
+<meta property="og:image" content="https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=1200">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a1f17;
+    --ink-2:#0f2a1f;
+    --verde:#16a34a;
+    --verde-osc:#0d7a37;
+    --lima:#a3e635;
+    --lima-osc:#84cc16;
+    --crema:#f7faf6;
+    --gris:#5b6f64;
+    --linea:#e4ece5;
+    --blanco:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--crema);line-height:1.7;overflow-x:hidden}
+  h1,h2,h3,.display{font-family:'Sora',sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.02em}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+  section{padding:100px 0}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--verde);color:#fff;padding:14px 28px;border-radius:50px;font-family:'Sora';font-weight:600;font-size:.95rem;border:none;cursor:pointer;box-shadow:0 12px 28px rgba(22,163,74,.32);transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(22,163,74,.45)}
+  .btn.lima{background:var(--lima);color:var(--ink);box-shadow:0 12px 28px rgba(163,230,53,.4)}
+  .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff;box-shadow:none;backdrop-filter:blur(4px)}
+  .btn.ghost:hover{background:#fff;color:var(--ink)}
+  .btn.wa{background:#25d366;box-shadow:0 12px 28px rgba(37,211,102,.4)}
+
+  /* NAV */
+  header{position:fixed;top:0;width:100%;z-index:100;transition:background .4s,box-shadow .4s,padding .4s}
+  header.scrolled{background:rgba(247,250,246,.92);backdrop-filter:blur(12px);box-shadow:0 6px 30px rgba(10,31,23,.07)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:1200px;margin:0 auto;transition:padding .4s}
+  header.scrolled nav{padding:13px 24px}
+  .logo{font-family:'Sora';font-weight:800;font-size:1.4rem;color:#fff;display:flex;align-items:center;gap:8px;transition:color .4s;letter-spacing:-.03em}
+  header.scrolled .logo{color:var(--ink)}
+  .logo b{color:var(--lima)}
+  header.scrolled .logo b{color:var(--verde)}
+  .navlinks{display:flex;gap:28px;align-items:center;font-weight:600;font-size:.93rem;color:rgba(255,255,255,.92);transition:color .4s}
+  header.scrolled .navlinks{color:var(--ink)}
+  .navlinks a.lnk{position:relative}
+  .navlinks a.lnk::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--lima);transition:width .3s}
+  header.scrolled .navlinks a.lnk::after{background:var(--verde)}
+  .navlinks a.lnk:hover::after{width:100%}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.7rem;color:#fff;cursor:pointer}
+  header.scrolled .menu-toggle{color:var(--ink)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url('https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=1800') center/cover;transform:scale(1.12);animation:zoom 20s ease-in-out infinite alternate}
+  @keyframes zoom{to{transform:scale(1)}}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,31,23,.9) 0%,rgba(13,42,31,.7) 45%,rgba(10,31,23,.35) 100%);z-index:1}
+  .hero-inner{position:relative;z-index:3;max-width:760px;padding:120px 0 60px}
+  .badge-eco{display:inline-flex;align-items:center;gap:8px;background:rgba(163,230,53,.16);border:1px solid rgba(163,230,53,.5);color:var(--lima);padding:8px 18px;border-radius:50px;font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:24px}
+  .hero h1{font-size:clamp(2.6rem,6.5vw,5rem);text-shadow:0 6px 40px rgba(0,0,0,.35)}
+  .hero h1 em{font-style:normal;color:var(--lima)}
+  .hero .sub{font-size:clamp(1.08rem,2.2vw,1.35rem);font-weight:300;margin:22px 0 34px;max-width:600px;opacity:.95;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-trust{margin-top:40px;display:flex;gap:14px 30px;flex-wrap:wrap;font-size:.92rem;font-weight:300}
+  .hero-trust span{display:inline-flex;align-items:center;gap:8px}
+  .hero-trust b{color:var(--lima);font-weight:700;font-family:'Sora'}
+  .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;color:#fff;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;opacity:.85;animation:bob 2s infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  /* MARQUEE */
+  .marquee{background:var(--ink);color:#fff;padding:18px 0;overflow:hidden;white-space:nowrap}
+  .marquee .track{display:inline-block;animation:scroll 26s linear infinite}
+  .marquee span{font-family:'Sora';font-weight:600;font-size:1rem;margin:0 14px;color:#fff}
+  .marquee i{color:var(--lima);font-style:normal;margin:0 14px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* STATS */
+  .stats{background:var(--ink-2);color:#fff;padding:64px 0}
+  .statgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .stat .num{font-family:'Sora';font-weight:800;font-size:clamp(2.1rem,5vw,3.3rem);color:var(--lima);line-height:1}
+  .stat .lbl{font-size:.92rem;font-weight:300;opacity:.88;margin-top:8px}
+
+  /* SECTION HEAD */
+  .sec-head{max-width:680px;margin:0 auto 58px;text-align:center}
+  .sec-head .tag{color:var(--verde);font-family:'Sora';font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
+  .sec-head h2{font-size:clamp(2rem,4.6vw,3rem);margin:12px 0 14px}
+  .sec-head p{color:var(--gris);font-weight:300;font-size:1.08rem}
+
+  /* SUSTENTABILIDAD / botellas */
+  .eco{background:linear-gradient(180deg,#fff,var(--crema))}
+  .eco-split{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .eco-copy .tag{color:var(--verde);font-family:'Sora';font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
+  .eco-copy h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:12px 0 16px}
+  .eco-copy h2 em{font-style:normal;color:var(--verde)}
+  .eco-copy p{color:var(--gris);font-weight:300;margin-bottom:18px}
+  .grs{display:inline-flex;align-items:center;gap:10px;background:#eaf6ee;border:1px solid #c9ead3;color:var(--verde-osc);padding:10px 18px;border-radius:14px;font-weight:600;font-size:.9rem}
+  .flow{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--ink);border-radius:24px;padding:40px 24px;color:#fff;box-shadow:0 24px 50px rgba(10,31,23,.25)}
+  .flow .step{text-align:center;flex:1}
+  .flow .step .ic{font-size:2.6rem;line-height:1}
+  .flow .step .n{font-family:'Sora';font-weight:800;font-size:1.5rem;color:var(--lima);margin-top:6px}
+  .flow .step .t{font-size:.78rem;opacity:.85;margin-top:2px}
+  .flow .arrow{color:var(--lima);font-size:1.6rem;opacity:.7}
+
+  /* CALIDAD */
+  .calidad{background:var(--ink);color:#fff}
+  .calidad .sec-head h2{color:#fff}
+  .calidad .sec-head .tag{color:var(--lima)}
+  .calidad .sec-head p{color:rgba(255,255,255,.7)}
+  .qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .qcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;transition:transform .3s,border-color .3s,background .3s}
+  .qcard:hover{transform:translateY(-6px);border-color:rgba(163,230,53,.5);background:rgba(163,230,53,.06)}
+  .qcard .ic{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,var(--verde),var(--lima-osc));display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:16px}
+  .qcard h3{font-size:1.12rem;margin-bottom:8px}
+  .qcard p{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.72)}
+
+  /* PROCESO */
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pcard{background:#fff;border:1px solid var(--linea);border-radius:20px;padding:30px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+  .pcard:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(10,31,23,.1)}
+  .pcard .num{font-family:'Sora';font-weight:800;font-size:3.4rem;color:var(--linea);line-height:1;position:absolute;top:14px;right:20px}
+  .pcard .step-tag{color:var(--verde);font-family:'Sora';font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em}
+  .pcard h3{font-size:1.25rem;margin:6px 0 8px}
+  .pcard p{color:var(--gris);font-weight:300;font-size:.94rem}
+
+  /* GALERIA */
+  .gal{background:var(--crema)}
+  .galgrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px}
+  .galgrid figure{margin:0;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 12px 30px rgba(10,31,23,.1)}
+  .galgrid figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .galgrid figure:hover img{transform:scale(1.1)}
+  .galgrid figure figcaption{position:absolute;left:0;bottom:0;right:0;padding:30px 18px 16px;color:#fff;font-family:'Sora';font-weight:600;font-size:.95rem;background:linear-gradient(transparent,rgba(10,31,23,.85));opacity:0;transition:opacity .4s}
+  .galgrid figure:hover figcaption{opacity:1}
+  .tall{grid-row:span 2}
+  .wide{grid-column:span 2}
+
+  /* USOS */
+  .usos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .uso{text-align:center;padding:36px 24px;border-radius:20px;background:#fff;border:1px solid var(--linea);transition:transform .3s,box-shadow .3s}
+  .uso:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(10,31,23,.1)}
+  .uso .ic{font-size:2.6rem}
+  .uso h3{font-size:1.2rem;margin:12px 0 6px}
+  .uso p{color:var(--gris);font-weight:300;font-size:.94rem}
+
+  /* RESPALDO */
+  .respaldo{background:linear-gradient(135deg,var(--verde-osc),var(--verde));color:#fff;border-radius:28px;padding:60px;display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center}
+  .respaldo h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:16px}
+  .respaldo p{font-weight:300;opacity:.94;margin-bottom:14px}
+  .respaldo .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .respaldo .chip{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:50px;font-size:.82rem;font-weight:500}
+  .respaldo .right{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:30px;text-align:center}
+  .respaldo .right .big{font-family:'Sora';font-weight:800;font-size:3.2rem;line-height:1;color:var(--lima)}
+  .respaldo .right .small{font-size:.92rem;opacity:.9;margin-top:6px}
+
+  /* CTA */
+  .ctaband{position:relative;text-align:center;color:#fff;padding:120px 0;background:url('https://playerassublimadas.com/cdn/shop/files/maraton-playeras-sublimadas-personalizadas.jpg?width=1600') center/cover fixed}
+  .ctaband::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,23,.85),rgba(13,122,55,.8))}
+  .ctaband .inner{position:relative;z-index:2;max-width:720px;margin:0 auto;padding:0 24px}
+  .ctaband h2{font-size:clamp(2.1rem,5vw,3.4rem)}
+  .ctaband h2 em{font-style:normal;color:var(--lima)}
+  .ctaband p{font-weight:300;font-size:1.15rem;margin:18px 0 32px;opacity:.95}
+
+  /* CONTACTO */
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .cinfo .tag{color:var(--verde);font-family:'Sora';font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem}
+  .cinfo h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0 22px}
+  .cline{display:flex;gap:15px;align-items:flex-start;margin-bottom:18px}
+  .cline .ic{flex:0 0 46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--verde),var(--lima-osc));color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+  .cline .meta b{display:block;font-family:'Sora';color:var(--ink)}
+  .cline .meta span,.cline .meta a{color:var(--gris);font-weight:300}
+  .cline .meta a:hover{color:var(--verde)}
+  .cbtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .cmedia{border-radius:24px;overflow:hidden;box-shadow:0 24px 50px rgba(10,31,23,.2);aspect-ratio:4/5}
+  .cmedia img{width:100%;height:100%;object-fit:cover}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#9fb5a8;padding:60px 24px 28px}
+  .fgrid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .fgrid .logo{color:#fff;font-size:1.5rem;margin-bottom:14px}
+  .fgrid p{font-weight:300;font-size:.92rem;max-width:340px}
+  .fcol h4{color:#fff;font-family:'Sora';font-size:1rem;margin-bottom:14px}
+  .fcol a{display:block;color:#9fb5a8;font-weight:300;font-size:.92rem;margin-bottom:9px;transition:color .2s}
+  .fcol a:hover{color:var(--lima)}
+  .fbottom{max-width:1200px;margin:0 auto;padding-top:22px;text-align:center;font-size:.82rem;font-weight:300;opacity:.65}
+
+  /* FAB */
+  .fab{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 10px 28px rgba(37,211,102,.5);animation:pulse 2.4s infinite}
+  .fab:hover{transform:scale(1.1)}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+  @media(max-width:980px){
+    .eco-split{grid-template-columns:1fr;gap:36px}
+    .qgrid{grid-template-columns:repeat(2,1fr)}
+    .pgrid{grid-template-columns:1fr}
+    .statgrid{grid-template-columns:repeat(2,1fr);gap:34px 20px}
+    .usos{grid-template-columns:1fr}
+    .respaldo{grid-template-columns:1fr;padding:40px}
+    .cgrid{grid-template-columns:1fr}
+    .galgrid{grid-template-columns:repeat(2,1fr)}
+    .fgrid{grid-template-columns:1fr;gap:28px}
+  }
+  @media(max-width:680px){
+    .navlinks{display:none}
+    .menu-toggle{display:block}
+    .navlinks.open{display:flex;flex-direction:column;position:absolute;top:62px;right:16px;background:#fff;color:var(--ink);padding:22px 28px;border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.18);gap:16px}
+    .navlinks.open a{color:var(--ink)}
+    .flow{flex-wrap:wrap;gap:18px}.flow .arrow{display:none}
+    .ctaband{background-attachment:scroll}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="hdr">
+  <nav>
+    <a href="#inicio" class="logo">Re<b>:</b>Cycla ♻️</a>
+    <div class="navlinks" id="nav">
+      <a class="lnk" href="#sustentabilidad">Sustentabilidad</a>
+      <a class="lnk" href="#calidad">Calidad</a>
+      <a class="lnk" href="#proceso">Proceso</a>
+      <a class="lnk" href="#trabajos">Trabajos</a>
+      <a class="lnk" href="#contacto">Contacto</a>
+      <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn">Cotizar ahora</a>
+    </div>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-inner">
+    <span class="badge-eco">♻️ Hilo 100% reciclado · Hecho en México</span>
+    <h1>Playeras sublimadas que <em>todos siguen usando</em></h1>
+    <p class="sub">Las playeras comunes se guardan y se olvidan. Las nuestras se vuelven parte del día a día por su comodidad y calidad comprobada. Confeccionadas en nuestro propio taller, a partir de botellas recicladas.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn lima">💬 Cotiza por WhatsApp</a>
+      <a href="#trabajos" class="btn ghost">Ver nuestros trabajos</a>
+    </div>
+    <div class="hero-trust">
+      <span>🧵 <b>100%</b> hilo reciclado</span>
+      <span>📦 <b>Envío gratis</b> a todo México</span>
+      <span>🎨 <b>Diseño</b> profesional gratis</span>
+    </div>
+  </div>
+  <a href="#sustentabilidad" class="scroll-cue">Desliza ↓</a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="track">
+    <span>Envío gratis</span><i>♦</i><span>Diseño profesional gratis</span><i>♦</i><span>Hilo 100% reciclado</span><i>♦</i><span>Sin retrasos</span><i>♦</i><span>Certificación Global Recycled Standard</span><i>♦</i><span>Atención directa, sin intermediarios</span><i>♦</i>
+    <span>Envío gratis</span><i>♦</i><span>Diseño profesional gratis</span><i>♦</i><span>Hilo 100% reciclado</span><i>♦</i><span>Sin retrasos</span><i>♦</i><span>Certificación Global Recycled Standard</span><i>♦</i><span>Atención directa, sin intermediarios</span><i>♦</i>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats" style="padding-top:60px;padding-bottom:60px">
+  <div class="wrap">
+    <div class="statgrid">
+      <div class="stat reveal"><div class="num" data-target="20" data-suffix=" mil">0</div><div class="lbl">Playeras entregadas al mes</div></div>
+      <div class="stat reveal d1"><div class="num" data-target="200" data-suffix=" mil">0</div><div class="lbl">Botellas PET recicladas al mes</div></div>
+      <div class="stat reveal d2"><div class="num" data-target="800" data-suffix="+">0</div><div class="lbl">Clientes satisfechos</div></div>
+      <div class="stat reveal d3"><div class="num" data-target="100" data-suffix="%">0</div><div class="lbl">Entrega garantizada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTENTABILIDAD -->
+<section class="eco" id="sustentabilidad">
+  <div class="wrap eco-split">
+    <div class="eco-copy reveal">
+      <span class="tag">¿Por qué Re:Cycla?</span>
+      <h2>Cada playera nace de <em>10 botellas recicladas</em></h2>
+      <p>Las botellas de PET se transforman en hilo y, de ahí, en una prenda durable, cómoda y sustentable. Calidad premium que además genera un impacto positivo en el medio ambiente — sin sacrificar estilo ni rendimiento.</p>
+      <p>Reciclamos <strong>200 mil botellas al mes</strong>, demostrando que es posible crear productos de alta calidad a partir de materiales reciclados.</p>
+      <div class="grs">✅ Certificación Global Recycled Standard (GRS)</div>
+    </div>
+    <div class="flow reveal d2">
+      <div class="step"><div class="ic">🍾</div><div class="n">10</div><div class="t">Botellas PET</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="ic">🧵</div><div class="n">1</div><div class="t">Hilo reciclado</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="ic">👕</div><div class="n">1</div><div class="t">Playera premium</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALIDAD -->
+<section class="calidad" id="calidad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Calidad que nos distingue</span>
+      <h2>Rendimiento profesional, hecho para durar</h2>
+      <p>Cada playera RECYCLA se diseña para brindar comodidad y durabilidad en cada uso.</p>
+    </div>
+    <div class="qgrid">
+      <div class="qcard reveal"><div class="ic">💧</div><h3>Tela Dry Fit premium</h3><p>Fresca y transpirable, ideal para eventos, deporte y uso diario.</p></div>
+      <div class="qcard reveal d1"><div class="ic">☀️</div><h3>Protección UV</h3><p>Secado rápido y tratamiento antibacterial para mayor confort.</p></div>
+      <div class="qcard reveal d2"><div class="ic">🧷</div><h3>Costuras reforzadas</h3><p>Precisión y acabados consistentes pieza por pieza.</p></div>
+      <div class="qcard reveal d3"><div class="ic">🎨</div><h3>Sublimación Ultra HD</h3><p>Colores vivos y duraderos que no se despintan con el uso.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Tu pedido paso a paso</span>
+      <h2>Un proceso claro, de la idea a tu puerta</h2>
+      <p>Te acompañamos en cada etapa con transparencia y tiempos confiables.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard reveal"><div class="num">1</div><div class="step-tag">Cotización</div><h3>Tu pedido comienza aquí</h3><p>Cotización formal con precios claros, cantidades definidas y detalles completos del proyecto.</p></div>
+      <div class="pcard reveal d1"><div class="num">2</div><div class="step-tag">Diseño</div><h3>Creamos tu idea</h3><p>Transformamos tu concepto en un diseño profesional optimizado para sublimación HD. Gratis.</p></div>
+      <div class="pcard reveal d2"><div class="num">3</div><div class="step-tag">Aprobación</div><h3>Tú tienes la última palabra</h3><p>Te mostramos la propuesta final para que revises y apruebes antes de producir.</p></div>
+      <div class="pcard reveal"><div class="num">4</div><div class="step-tag">Maquila</div><h3>Producción en taller propio</h3><p>Fabricamos cada playera garantizando consistencia y el mismo nivel de calidad.</p></div>
+      <div class="pcard reveal d1"><div class="num">5</div><div class="step-tag">Envío</div><h3>Envío gratis</h3><p>Recibe tus playeras en cualquier parte de México sin costo adicional.</p></div>
+      <div class="pcard reveal d2"><div class="num">6</div><div class="step-tag">Entrega</div><h3>En el tiempo acordado</h3><p>Cumplimos los tiempos de producción y entrega, sin retrasos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gal" id="trabajos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Trabajos que hablan por sí solos</span>
+      <h2>Proyectos reales de nuestros clientes</h2>
+      <p>Eventos deportivos, torneos, uniformes corporativos y escolares en todo México.</p>
+    </div>
+    <div class="galgrid reveal d1">
+      <figure class="tall"><img src="https://playerassublimadas.com/cdn/shop/files/Portada_playeras_sublimadas_recicladas.jpg?width=900" alt="Evento masivo con playeras sublimadas Re:Cycla" loading="lazy"><figcaption>Eventos masivos</figcaption></figure>
+      <figure class="wide"><img src="https://playerassublimadas.com/cdn/shop/files/maraton-playeras-sublimadas-personalizadas.jpg?width=1200" alt="Maratón con playeras personalizadas" loading="lazy"><figcaption>Maratones y carreras</figcaption></figure>
+      <figure><img src="https://playerassublimadas.com/cdn/shop/files/proyecto-padel-playeras-sublimadas.png?width=700" alt="Uniformes de pádel sublimados" loading="lazy"><figcaption>Pádel</figcaption></figure>
+      <figure><img src="https://playerassublimadas.com/cdn/shop/files/equipo-padel-playeras-sublimadas.png?width=700" alt="Equipo de pádel con uniformes Dry Fit" loading="lazy"><figcaption>Equipos deportivos</figcaption></figure>
+      <figure><img src="https://playerassublimadas.com/cdn/shop/files/uniformes-padel-playeras-sublimadas-dryfit.png?width=700" alt="Uniformes de torneo Dry Fit" loading="lazy"><figcaption>Torneos</figcaption></figure>
+      <figure class="wide"><img src="https://playerassublimadas.com/cdn/shop/files/proyecto-uniformes-corporativos-playeras-sublimadas.png?width=1200" alt="Uniformes corporativos y escolares sublimados" loading="lazy"><figcaption>Corporativos y escolares</figcaption></figure>
+      <figure><img src="https://playerassublimadas.com/cdn/shop/files/oficinas-recycla-produccion-playeras-sublimadas.jpg?width=700" alt="Taller de producción Re:Cycla" loading="lazy"><figcaption>Nuestro taller</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- USOS -->
+<section style="background:var(--crema);padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">Para cada proyecto</span>
+      <h2>Un socio confiable para tu marca o evento</h2>
+    </div>
+    <div class="usos">
+      <div class="uso reveal"><div class="ic">🏃</div><h3>Eventos deportivos</h3><p>Maratones, torneos, ligas y carreras con identidad propia.</p></div>
+      <div class="uso reveal d1"><div class="ic">🏢</div><h3>Empresas y marcas</h3><p>Uniformes corporativos y merch que tu equipo querrá usar.</p></div>
+      <div class="uso reveal d2"><div class="ic">🎓</div><h3>Escuelas y grupos</h3><p>Playeras escolares, generaciones y eventos especiales.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESPALDO -->
+<section>
+  <div class="wrap">
+    <div class="respaldo reveal">
+      <div>
+        <h2>Respaldados por la industria textil más grande de México</h2>
+        <p>Formamos parte de <strong>Hilados de Alta Calidad</strong>, la importadora de hilo más grande de México, con más de 40 años de experiencia y seis centros de distribución estratégicos en todo el país.</p>
+        <p>Gracias a este respaldo, garantizamos materia prima de excelencia, entregas puntuales y la más alta calidad en cada pedido.</p>
+        <div class="chips">
+          <span class="chip">Puebla</span><span class="chip">CDMX</span><span class="chip">Monterrey</span><span class="chip">León</span><span class="chip">Cuernavaca</span><span class="chip">Guadalajara</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="big">+40</div>
+        <div class="small">años de experiencia en la industria textil</div>
+        <div style="margin-top:18px;font-size:.86rem;opacity:.92">🏆 Reconocida entre las <b>Mejores Empresas Mexicanas</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="ctaband">
+  <div class="inner reveal">
+    <h2>Sé parte del <em>cambio</em></h2>
+    <p>Calidad premium, diseño profesional gratis y un impacto positivo en cada playera. Cuéntanos tu proyecto y recibe tu cotización hoy.</p>
+    <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn lima">💬 Cotiza ahora por WhatsApp</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="wrap cgrid">
+    <div class="cinfo reveal">
+      <span class="tag">Contacto</span>
+      <h2>Hablemos de tu proyecto 🌱</h2>
+      <div class="cline"><div class="ic">💬</div><div class="meta"><b>WhatsApp</b><a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener">+52 229 422 9515</a></div></div>
+      <div class="cline"><div class="ic">🕒</div><div class="meta"><b>Horario de atención</b><span>Lunes a viernes, 10:00 – 18:00 hrs</span></div></div>
+      <div class="cline"><div class="ic">📸</div><div class="meta"><b>Instagram</b><a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener">@recycla_mexico</a></div></div>
+      <div class="cline"><div class="ic">🌎</div><div class="meta"><b>Cobertura</b><span>Envíos a todo México, sin costo adicional</span></div></div>
+      <div class="cbtns">
+        <a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="btn wa">💬 WhatsApp</a>
+        <a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener" class="btn lima">📸 Instagram</a>
+      </div>
+    </div>
+    <div class="cmedia reveal d1">
+      <img src="https://playerassublimadas.com/cdn/shop/files/proyecto-padel-playeras-sublimadas.png?width=900" alt="Playeras sublimadas Re:Cycla" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fgrid">
+    <div>
+      <div class="logo">Re<b style="color:var(--lima)">:</b>Cycla ♻️</div>
+      <p>Playeras sublimadas premium hechas en México con hilo 100% reciclado. Calidad y estilo que duran años, con impacto positivo en el medio ambiente.</p>
+    </div>
+    <div class="fcol">
+      <h4>Explora</h4>
+      <a href="#sustentabilidad">Sustentabilidad</a>
+      <a href="#calidad">Calidad</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#trabajos">Trabajos</a>
+    </div>
+    <div class="fcol">
+      <h4>Contacto</h4>
+      <a href="https://wa.me/522294229515" target="_blank" rel="noopener">WhatsApp: 229 422 9515</a>
+      <a href="https://www.instagram.com/recycla_mexico/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://playerassublimadas.com/" target="_blank" rel="noopener">playerassublimadas.com</a>
+    </div>
+  </div>
+  <div class="fbottom">© 2025 XM INNOVACIÓN SA de CV · Re:Cycla · Playeras sublimadas con hilo 100% reciclado · Hecho en México 🇲🇽</div>
+</footer>
+
+<a href="https://wa.me/522294229515?text=Hola%2C%20quiero%20cotizar%20playeras%20recicladas" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">💬</a>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>40));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  function count(el){const t=+el.dataset.target,sfx=el.dataset.suffix||'';let c=0;const s=Math.max(1,t/55);const id=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(id)}el.textContent=Math.round(c)+sfx;},26);}
+  const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){count(e.target);co.unobserve(e.target)}}),{threshold:.5});
+  document.querySelectorAll('.num').forEach(el=>co.observe(el));
+  document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+</script>
+</body>
+</html>
