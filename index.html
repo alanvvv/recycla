@@ -454,7 +454,7 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   function count(el){const t=+el.dataset.target,sfx=el.dataset.suffix||'';let c=0;const s=Math.max(1,t/55);const id=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(id)}el.textContent=Math.round(c)+sfx;},26);}
   const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){count(e.target);co.unobserve(e.target)}}),{threshold:.5});
-  document.querySelectorAll('.num').forEach(el=>co.observe(el));
+  document.querySelectorAll('.statgrid .num').forEach(el=>co.observe(el));
   document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
 </script>
 </body>
